@@ -84,13 +84,70 @@ pip install -r requirements.txt
 python app/api.py
 ```
 
-Сервис доступен на `http://localhost:5000`.
 
 ---
+## Примеры запросов к API (curl-команды).
+```
+curl -X GET http://172.17.0.2:5000/health
+ответ {"loaded_models":["2","1"],"status":"healthy"}
+
+curl -X POST http://172.17.0.2:5000/predict \
+     -H "Content-Type: application/json" \
+     -d '{
+           "model_version": "1",
+           "LIMIT_BAL": 20000,
+           "SEX": 2,
+           "EDUCATION": 2,
+           "MARRIAGE": 1,
+           "AGE": 35,
+           "PAY_0": -1,
+           "PAY_2": -1,
+           "PAY_3": -1,
+           "PAY_4": -1,
+           "PAY_5": -1,
+           "PAY_6": -1,
+           "BILL_AMT1": 10000,
+           "BILL_AMT2": 15000,
+           "BILL_AMT3": 12000,
+           "BILL_AMT4": 14000,
+           "BILL_AMT5": 13000,
+           "BILL_AMT6": 11000,
+           "PAY_AMT1": 5000,
+           "PAY_AMT2": 6000,
+           "PAY_AMT3": 5500,
+         }'"PAY_AMT6": 5800,
+ответ {"model_version":"1","prediction":1,"probability":1.0}
+
+curl -X POST http://172.17.0.2:5000/predict \
+     -H "Content-Type: application/json" \
+     -d '{
+           "model_version": "2",
+           "LIMIT_BAL": 20000,
+           "SEX": 2,
+           "EDUCATION": 2,
+           "MARRIAGE": 1,
+           "AGE": 35,
+           "PAY_0": -1,
+           "PAY_2": -1,
+           "PAY_3": -1,
+           "PAY_4": -1,
+           "PAY_5": -1,
+           "PAY_6": -1,
+           "BILL_AMT1": 10000,
+           "BILL_AMT2": 15000,
+           "BILL_AMT3": 12000,
+           "BILL_AMT4": 14000,
+           "BILL_AMT5": 13000,
+           "BILL_AMT6": 11000,
+           "PAY_AMT1": 5000,
+           "PAY_AMT2": 6000,
+           "PAY_AMT3": 5500,
+         }'"PAY_AMT6": 5800,
+ответ {"model_version":"2","prediction":0,"probability":0.46}
+```
 
 
 ## API: формат запросов и ответов
-
 - Описание заросов и ответов приложения: [`API_doc.md`](API_doc.md)
 
 ## Docker
