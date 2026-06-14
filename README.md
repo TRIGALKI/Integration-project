@@ -115,7 +115,10 @@ curl -X POST http://172.17.0.2:5000/predict \
            "PAY_AMT1": 5000,
            "PAY_AMT2": 6000,
            "PAY_AMT3": 5500,
-         }'"PAY_AMT6": 5800,
+           "PAY_AMT4": 6500,
+           "PAY_AMT5": 6200,
+           "PAY_AMT6": 5800
+         }'
 ответ {"model_version":"1","prediction":1,"probability":1.0}
 
 curl -X POST http://172.17.0.2:5000/predict \
@@ -142,7 +145,10 @@ curl -X POST http://172.17.0.2:5000/predict \
            "PAY_AMT1": 5000,
            "PAY_AMT2": 6000,
            "PAY_AMT3": 5500,
-         }'"PAY_AMT6": 5800,
+           "PAY_AMT4": 6500,
+           "PAY_AMT5": 6200,
+           "PAY_AMT6": 5800
+         }'
 ответ {"model_version":"2","prediction":0,"probability":0.46}
 ```
 
