@@ -74,7 +74,7 @@ pip install -r requirements.txt
 
 ### 2. Обучить модели
 
-Прогоняем ноутбук 
+Прогоняем ноутбук [`notebooks/Models fitting vers.ipynb`](notebooks/Models fitting vers.ipynb)
 
 Результат: `models/model_v1.plk`, `models/model_v2.pkl`
 
