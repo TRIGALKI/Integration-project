@@ -162,13 +162,16 @@ curl -X POST http://172.17.0.2:5000/predict \
 ```
 docker pull trigalki/web_app_v2:latest
 ```
-
+Привмер запуска 
+```
+sudo docker run -it --rm --name my_web_app_v2 trigalki/web_app_v2:latest
+```
 ## Модели
 
 | Версия | Алгоритм | Описание |
 |---|---|---|
-| v1 | LogisticRegression | Базовая интерпретируемая модель, быстрый инференс |
-| v2 |RandomForestClassifier | Более сложная модель используется как challenger в A/B-тесте |
+| 1 | LogisticRegression | Базовая интерпретируемая модель, быстрый инференс |
+| 2 |RandomForestClassifier | Более сложная модель используется как challenger в A/B-тесте |
 
 
 ---
