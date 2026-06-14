@@ -70,7 +70,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Обучить модели
+### 2. Обучить модели (Опционально , на гите есть модели версии 1 и 2 , если не нужно добавлять еще или преобучавть пропускаем этот шаг)
 
 Прогоняем ноутбук [`notebooks/Models fitting vers.ipynb`](Models fitting vers.ipynb)
 
