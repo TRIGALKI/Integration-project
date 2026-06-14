@@ -193,7 +193,7 @@ sudo docker run -it --rm --name my_web_app_v2 trigalki/web_app_v2:latest
 Клиентская часть (запуск скрипта test.py)
 <img width="787" height="524" alt="image" src="https://github.com/user-attachments/assets/e0fb5ddb-8b44-4d07-bfe8-60015c860334" />
 
-Запуск контейнера и логи работы серверной часть 
+Запуск контейнера и логи работы серверной части
 <img width="1377" height="567" alt="image" src="https://github.com/user-attachments/assets/1dbc7818-a721-4ede-bc56-676ecbc71b2f" />
 
 
