@@ -4,7 +4,10 @@
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
-Project with model implementation for mifi task
+Сервис машинного обучения для прогнозирования дефолта по кредитным картам. Реализует полный production-like цикл: обучение → сохранение → REST API → контейнеризация → A/B-тест.
+
+Датасет: Default of Credit Card Clients (UCI ML Repository)
+Задача: бинарная классификация — предсказать дефолт клиента в следующем месяце.
 
 ## Project Organization
 
