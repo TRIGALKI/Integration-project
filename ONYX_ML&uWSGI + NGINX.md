@@ -12,6 +12,25 @@
 
 Для конвертации используется библиотека skl2onnx.
 
+**Пример конвертации LogisticRegression:**
+
+```python
+from skl2onnx import convert_sklearn
+from skl2onnx.common.data_types import FloatTensorType
+import onnxruntime as rt
+
+# Конвертируем Pipeline в ONNX
+initial_type = [("float_input", FloatTensorType([None, n_features]))]
+onnx_model = convert_sklearn(pipeline, initial_types=initial_type)
+
+with open("models/model_v1.onnx", "wb") as f:
+    f.write(onnx_model.SerializeToString())
+
+# Инференс через ONNX Runtime
+sess = rt.InferenceSession("models/model_v1.onnx")
+pred = sess.run(["output_label"], {"float_input": X_test.astype("float32")})
+```
+
 Production-развертывание: uWSGI + NGINX
 
 Запуск Flask-приложения через встроенный сервер (app.run()) подходит для тестов но не подходит для production-среды. Он не рассчитан на высокую нагрузку, не поддерживает многопоточность и небезопасен. Для промышленного использования Flask-приложение "оборачивают" в более производительный сервер приложений и ставят перед ним веб-сервер.
@@ -27,7 +46,6 @@ Production-развертывание: uWSGI + NGINX
 Ограничение частоты запросов (Rate Limiting): Защищает бэкенд от DDoS-атак и резких всплесков трафика.
 Обратный прокси (Reverse Proxy): NGINX принимает все входящие запросы и перенаправляет их 
 на сервер приложений (uWSGI).
-Роль uWSGI
 
 ## uWSGI — это сервер приложений, который реализует протокол WSGI (Web Server Gateway Interface).
 ## Он является "мостом" между NGINX и Python-кодом.
