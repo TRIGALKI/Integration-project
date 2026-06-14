@@ -58,4 +58,69 @@ Project with model implementation for mifi task
 ```
 
 --------
+## Быстрый старт (локальный запуск)
+
+### 1. Установка зависимостей
+
+```bash
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# Linux/macOS:
+source venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+### 2. Обучить модели
+
+Прогоняем ноутбук 
+
+Результат: `models/model_v1.plk`, `models/model_v2.pkl`
+
+### 3. Запустить сервис
+
+```bash
+python app/api.py
+```
+
+Сервис доступен на `http://localhost:5000`.
+
+---
+
+
+## API: формат запросов и ответов
+
+- Подробное обоснование архитектурных решений: [`API_doc.md`](API_doc.md)
+
+## Docker
+
+### Сборка и запуск одного образа
+
+
+
+### Docker Hub
+
+Страница образа на Docker Hub: [https://hub.docker.com/repository/docker/trigalki/web_app_v2/general]
+```
+docker pull trigalki/web_app_v2:latest
+```
+
+## Модели
+
+| Версия | Алгоритм | Описание |
+|---|---|---|
+| v1 | LogisticRegression | Базовая интерпретируемая модель, быстрый инференс |
+| v2 |RandomForestClassifier | Более сложная модель используется как challenger в A/B-тесте |
+
+
+---
+
+## Архитектура,метрики,Млопс инструменты, A/B-тест
+
+- Подробное обоснование архитектурных решений: [`ARCHITECTURE.md`](ARCHITECTURE.md)
+- Описание Млопс интсрументов [`MLOPS.md`](MLOPS.md.md)
+- Обосонвоание по выбору бизнес метрик [`Metrics.md`](Metrics.md)
+- План A/B-тестирования: [`AB_TEST_PLAN.md`](AB_TEST_PLAN.md)
+
 
