@@ -74,9 +74,9 @@ pip install -r requirements.txt
 
 ### 2. Обучить модели
 
-Прогоняем ноутбук [`notebooks/Models fitting vers.ipynb`](notebooks/Models fitting vers.ipynb)
+Прогоняем ноутбук [`notebooks/Models fitting vers.ipynb`](Models fitting vers.ipynb)
 
-Результат: `models/model_v1.plk`, `models/model_v2.pkl`
+Результат: `models/model_v1.plk`, `models/model_v2.pkl`в папке 'models'
 
 ### 3. Запустить сервис
 
