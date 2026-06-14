@@ -61,7 +61,7 @@
 ### 1. Установка зависимостей
 
 ```bash
-python -m venv venv
+python3 -m venv venv
 # Windows:
 venv\Scripts\activate
 # Linux/macOS:
@@ -159,11 +159,11 @@ curl -X POST http://172.17.0.2:5000/predict \
 ### Docker Hub
 
 Страница образа на Docker Hub: [https://hub.docker.com/repository/docker/trigalki/web_app_v2/general]
-```
+```bash
 docker pull trigalki/web_app_v2:latest
 ```
 Привмер запуска 
-```
+```bash
 sudo docker run -it --rm --name my_web_app_v2 trigalki/web_app_v2:latest
 ```
 ## Модели
