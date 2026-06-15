@@ -87,7 +87,7 @@ model_version (строка, опционально): Версия модели,
 {
   "prediction": 1,
   "probability": 0.85,
-  "model_version": "v2"
+  "model_version": "2"
 }
 ```
 
